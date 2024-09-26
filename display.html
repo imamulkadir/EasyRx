@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prescription</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style></style>
+    <link rel="stylesheet" href="displayStyles.css" />
+  </head>
+  <body>
+    <div class="a4">
+      <div class="row">
+        <div class="col headerBangla">
+          <h6 class="text-left mb-1 p-0">ডাঃ আল নাহিয়ান সৌরভ</h6>
+          <p class="mt-0 mb-3 p-0">
+            <span>এমবিবিএস, এমসিজিপি</span><br /><span
+              >পিজিটি (মেডিসিন ও চর্ম)</span
+            ><br /><span>সিসিডি (বারডেম), সিএমইউ (আল্ট্রা)</span><br /><span
+              >আর্মি মেডিকেল কলেজ ও হাসপাতাল, কুমিল্লা</span
+            ><br /><span>বিএমডিসি রেজি নংঃ এ-১২০৬২২</span>
+          </p>
+        </div>
+        <div class="col">
+          <div class="details">
+            <p>
+              মেডিসিন, বাত-ব্যাথা, উচ্চ রক্তচাপ, শ্বাসকষ্ট, ডায়াবেটিস, চর্ম,
+              নাক, কান ও গলা রোগ চিকিৎসক
+            </p>
+          </div>
+          <div class="appoint">
+            <p>
+              সাক্ষাৎঃ<br />প্রতি শনিবার থেকে বৃহস্পতিবার সকাল ৯টা থেকে বিকাল
+              ৫টা।
+            </p>
+          </div>
+        </div>
+        <div class="col headerEnglish">
+          <h6 class="text-left mb-1 p-0">DR. AL NAHIAN SOURAV</h6>
+          <p class="mt-0 mb-3 p-0">
+            <span>MBBS (BUP), MCGP </span><br /><span
+              >PGT (MEDICINE & SKIN) </span
+            ><br /><span>CCD (BIRDEM), CMU (ULTRA ) </span><br /><span
+              class="collegeName"
+              >Army Medical College & Hospital, Cumilla</span
+            ><br /><span>BMDC Reg No : A-120622</span>
+          </p>
+        </div>
+      </div>
+      <hr class="mt-0 mb-0 newHr" />
+      <div class="row mt-1 mb-0 p-0 patientDetails">
+        <div class="col-3 nameCol">
+          <label class="form-label fw-bold"
+            >Name: <span class="fw-normal" id="display-name"></span
+          ></label>
+        </div>
+        <div class="col-2 ageCol">
+          <label class="form-label fw-bold"
+            >Age: <span class="fw-normal" id="display-age"></span
+          ></label>
+        </div>
+        <div class="col-2 weightCol">
+          <label class="form-label fw-bold"
+            >Weight: <span class="fw-normal" id="display-weight"></span
+          ></label>
+        </div>
+        <div class="col-2 sexCol">
+          <label class="form-label fw-bold"
+            >Sex: <span class="fw-normal" id="display-sex"></span
+          ></label>
+        </div>
+        <div class="col-3 dateCol">
+          <label class="form-label fw-bold"
+            >Date: <span class="fw-normal" id="display-date"></span
+          ></label>
+        </div>
+      </div>
+      <hr class="mt-0 mb-0 newHr" />
+
+      <div class="container">
+        <div class="cc">
+          <label class="form-label fw-bold"
+            >C/C:
+            <p class="fw-normal" id="display-cc"></p
+          ></label>
+        </div>
+        <div class="rx">
+          <label class="form-label fw-bold"
+            >R/x:
+            <p class="fw-normal" id="display-rx"></p
+          ></label>
+        </div>
+        <div class="oe">
+          <label class="form-label fw-bold"
+            >O/E:
+            <p class="fw-normal" id="display-oe"></p
+          ></label>
+        </div>
+        <div class="ad">
+          <label class="form-label fw-bold"
+            >Adv:
+            <p class="fw-normal" id="display-adv"></p
+          ></label>
+        </div>
+      </div>
+      <div class="laterAppoint">
+        <p>
+          * পরবর্তী সাক্ষাৎ ____ দিন পর। আসার সময় ব্যবস্থাপত্র নিয়ে আসবেন।
+        </p>
+      </div>
+      <hr class="mt-0 mb-0 newHr" />
+
+      <div class="row">
+        <div class="col-10">
+          <p class="footerLeft">
+            আমরা বন্ধু ক'জন<br /><span class="flSpan"
+              >A specialized whatsapp group equipped with all the modern
+              resources at your fingertips</span
+            >
+          </p>
+        </div>
+        <div class="col-2 align-items-right">
+          <p class="footerRight">2024</p>
+        </div>
+      </div>
+
+      <div class="floating-print">
+        <button class="btn btn-primary btn-print" onclick="window.print()">
+          Print
+        </button>
+      </div>
+      <div class="floating-home">
+        <button class="btn btn-info btn-home" id="homeButton">Home</button>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("homeButton")
+        .addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      document.addEventListener("DOMContentLoaded", function () {
+        const formData = new FormData();
+
+        // Appending
+        formData.append("name", sessionStorage.getItem("name"));
+        formData.append("age", sessionStorage.getItem("age"));
+        formData.append("weight", sessionStorage.getItem("weight"));
+        formData.append("sex", sessionStorage.getItem("sex"));
+        formData.append("date", sessionStorage.getItem("date"));
+        formData.append("rx", sessionStorage.getItem("rx"));
+        formData.append("cc", sessionStorage.getItem("cc"));
+        formData.append("oe", sessionStorage.getItem("oe"));
+        formData.append("adv", sessionStorage.getItem("adv"));
+
+        // Get main date
+        const originalDate = formData.get("date");
+
+        // Convert date from YYYY-MM-DD to DD/MM/YYYY format
+        const [year, month, day] = originalDate.split("-");
+        const formattedDate = `${day}/${month}/${year}`;
+
+        // Setting value
+        document.getElementById("display-name").textContent =
+          formData.get("name");
+        document.getElementById("display-age").textContent =
+          formData.get("age");
+        document.getElementById("display-weight").textContent =
+          formData.get("weight");
+        document.getElementById("display-sex").textContent =
+          formData.get("sex");
+        document.getElementById("display-date").textContent = formattedDate;
+        document.getElementById("display-rx").innerHTML = formData
+          .get("rx")
+          .replace(/\n/g, "<br>");
+        document.getElementById("display-cc").innerHTML = formData
+          .get("cc")
+          .replace(/\n/g, "<br>");
+        document.getElementById("display-oe").innerHTML = formData
+          .get("oe")
+          .replace(/\n/g, "<br>");
+        document.getElementById("display-adv").innerHTML = formData
+          .get("adv")
+          .replace(/\n/g, "<br>");
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

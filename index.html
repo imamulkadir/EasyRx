@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .text-end {
+        margin-bottom: 70px;
+      }
+
+      @media (max-width: 770px) {
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        hr {
+          width: 90%;
+        }
+
+        .col-8,
+        .col-4 {
+          width: 100%;
+        }
+
+        .col-md-6,
+        .col-md-3 {
+          width: 100%;
+        }
+
+        .row {
+          flex-direction: column;
+        }
+
+        #rx,
+        #cc,
+        #oe,
+        #adv {
+          height: 150px;
+        }
+
+        .d-grid {
+          gap: 10px;
+        }
+
+        .text-end {
+          position: absolute;
+          right: 10px;
+          bottom: 80px;
+          margin-bottom: 0;
+        }
+
+        body {
+          padding: 10px;
+        }
+
+        .container-fluid {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="text-center">Patient Details</h2>
+    <hr class="newHR" />
+    <div class="container-fluid">
+      <form id="patientForm">
+        <div class="row">
+          <div class="col-8">
+            <div class="row mb-2">
+              <div class="col-md-6">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  maxlength="20"
+                  required
+                />
+              </div>
+              <div class="col-md-3">
+                <label for="age" class="form-label fw-bold">Age</label>
+                <input type="number" class="form-control" id="age" required />
+              </div>
+              <div class="col-md-3">
+                <label for="weight" class="form-label fw-bold"
+                  >Weight (kg)</label
+                >
+                <input
+                  type="number"
+                  step="0.1"
+                  class="form-control"
+                  id="weight"
+                />
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Sex</label><br />
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="male"
+                    name="sex"
+                    value="Male"
+                    required
+                  />
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="female"
+                    name="sex"
+                    value="Female"
+                    required
+                  />
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="other"
+                    name="sex"
+                    value="Other"
+                    required
+                  />
+                  <label class="form-check-label" for="other">Other</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="date" class="form-label fw-bold">Date</label>
+                <input type="date" class="form-control" id="date" required />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="mb-2">
+                  <label for="cc" class="form-label fw-bold">C/C</label>
+                  <textarea
+                    class="form-control"
+                    id="cc"
+                    rows="2"
+                    style="height: 200px"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-2">
+                  <label for="oe" class="form-label fw-bold">O/E</label>
+                  <textarea
+                    class="form-control"
+                    id="oe"
+                    rows="2"
+                    style="height: 200px"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-2">
+                  <label for="adv" class="form-label fw-bold">Adv</label>
+                  <textarea
+                    class="form-control"
+                    id="adv"
+                    rows="2"
+                    style="height: 200px"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="mb-2">
+              <label for="rx" class="form-label fw-bold">R/X</label>
+              <textarea
+                class="form-control"
+                id="rx"
+                rows="2"
+                style="height: 360px"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="text-end">
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg"
+            style="max-width: 150px"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <footer class="bg-light text-center">
+        <div class="container">
+          <div class="text-center">
+            © 2024 💁 Developed by
+            <a
+              href="https://www.linkedin.com/in/imamulkadir/"
+              target="_blank"
+              class="text-decoration-none"
+              >Imamul Kadir</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Setting current date
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("date").value = today;
+
+      // Submit form
+      document
+        .getElementById("patientForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Read values
+          const name = document.getElementById("name").value;
+          const age = document.getElementById("age").value;
+          const weight = document.getElementById("weight").value;
+          const sex = document.querySelector('input[name="sex"]:checked').value;
+          const date = document.getElementById("date").value;
+          const rx = document.getElementById("rx").value;
+          const cc = document.getElementById("cc").value;
+          const oe = document.getElementById("oe").value;
+          const adv = document.getElementById("adv").value;
+
+          // Save in sessionStorge
+          sessionStorage.setItem("name", name);
+          sessionStorage.setItem("age", age);
+          sessionStorage.setItem("weight", weight);
+          sessionStorage.setItem("sex", sex);
+          sessionStorage.setItem("date", date);
+          sessionStorage.setItem("rx", rx);
+          sessionStorage.setItem("cc", cc);
+          sessionStorage.setItem("oe", oe);
+          sessionStorage.setItem("adv", adv);
+
+          window.location.href = "display.html";
+        });
+    </script>
+  </body>
+</html>
